@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ZoomDrive Sync
     steps:
-      - uses: coronasafe/zoomdrive@v2
+      - uses: coronasafe/zoomdrive@v0.1
           zoom_account_id: ${{ secrets.ZOOM_ACCOUNT_ID }}
           zoom_client_id: ${{ secrets.ZOOM_CLIENT_ID }}
           zoom_client_secret: ${{ secrets.ZOOM_CLIENT_SECRET }}
