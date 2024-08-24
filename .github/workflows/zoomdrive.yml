@@ -1,0 +1,20 @@
+name: ZoomDrive Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    environment: ZoomDrive Sync
+    steps:
+      - uses: coronasafe/zoomdrive@latest
+        with:
+          zoom_account_id: ${{ secrets.ZOOM_ACCOUNT_ID }}
+          zoom_client_id: ${{ secrets.ZOOM_CLIENT_ID }}
+          zoom_client_secret: ${{ secrets.ZOOM_CLIENT_SECRET }}
+          gsa_credentials: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS }}
+          meeting_gdrive_folder_map: ${{ secrets.GDRIVE_FOLDER_MAP }}
+          delete_on_success: true
